@@ -5,10 +5,12 @@ import Tienda from '../pages/tienda';
 const Layout = ({children, pagina}) => {
   return (
       <div>
-          <head>
-              <title>GuitarLA - {pagina}</title>
-              <meta name="description" content="Sitio web de venta de guitarras" />
-          </head>
+          <div>
+            <head>
+                <title>GuitarLA - {pagina}</title>
+                <meta name="description" content="Sitio web de venta de guitarras" />
+            </head>
+          </div>
           <Header />
           {children}
           <Footer />

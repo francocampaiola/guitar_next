@@ -2,6 +2,7 @@ import React from 'react';
 import { formatearFecha } from '../helpers'
 import Link from 'next/link'
 import Image from 'next/image'
+import styles from '../styles/Entrada.module.css'
 
 const Entrada = ({entrada}) => {
     const {titulo, resumen, imagen, published_at, id } = entrada;
@@ -9,18 +10,21 @@ const Entrada = ({entrada}) => {
   return (
     <article>
         <Image
+            priority='true'
             src={imagen.url}
             alt={`imagen blog ${titulo}`}
             width={800}
             height={600}
             layout='responsive'
         />
-        <div>
-            <h1>{titulo}</h1>
-            <p>{formatearFecha(published_at)}</p>
-            <p>{resumen}</p>
+        <div className={styles.contenido}>
+            <h3>{titulo}</h3>
+            <p className={styles.fecha}>{formatearFecha(published_at)}</p>
+            <p className={styles.resumen}>{resumen}</p>
             <Link href={`/blog/${id}`}>
-                Leer entrada
+                <a className={styles.enlace}>
+                    Leer entrada
+                </a>
             </Link>
         </div>
     </article>
