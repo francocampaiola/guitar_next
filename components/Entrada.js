@@ -5,7 +5,7 @@ import Image from 'next/image'
 import styles from '../styles/Entrada.module.css'
 
 const Entrada = ({entrada}) => {
-    const {titulo, resumen, imagen, published_at, id, url } = entrada;
+    const {titulo, resumen, imagen, published_at, url } = entrada;
 
   return (
     <article>

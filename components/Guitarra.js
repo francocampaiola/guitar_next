@@ -5,7 +5,7 @@ import styles from '../styles/Guitarra.module.css';
 
 const Guitarra = ({guitarra}) => {
 
-    const {nombre, descripcion, imagen, precio, id, url} = guitarra;
+    const {nombre, descripcion, imagen, precio, url} = guitarra;
 
   return (
         <div className={styles.producto}>

@@ -5,7 +5,9 @@ import styles from '../styles/Tienda.module.css'
 const Tienda = ({guitarras}) => {
     return (
         <div>
-            <Layout pagina="Tienda Virtual">
+            <Layout
+                pagina="Tienda -"
+            >
                 <div className='contenedor'>
                     <div className={styles.tienda}>
                         {guitarras.map(guitarra => (
@@ -21,8 +23,8 @@ const Tienda = ({guitarras}) => {
     )
 };
 
-export async function getStaticProps() {
-    const url = `${process.env.API_URL}/guitarras`
+export async function getServerSideProps() {
+    const url = `${process.env.API_URL}/guitarras?_sort=created_at:asc`
     const respuesta = await fetch(url);
     const guitarras = await respuesta.json();
 

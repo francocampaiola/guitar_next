@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router';
 import Layout from '../../components/Layout';
 import Image from 'next/image';
 import { formatearFecha } from '../../helpers';
@@ -9,7 +8,9 @@ const EntradaBlog = ({entrada}) => {
     const { contenido, imagen, published_at, titulo} = entrada;
 
   return (
-      <Layout>
+      <Layout
+        pagina={`${titulo}`}
+        >
         <main className='contenedor'>
             <h1 className='heading'>{titulo}</h1>
             <article className={styles.entrada}>    
