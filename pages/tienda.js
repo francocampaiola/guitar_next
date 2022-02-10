@@ -1,30 +1,26 @@
-import Layout from '../components/Layout'
-import Guitarra from '../components/Guitarra';
-import styles from '../styles/Tienda.module.css'
+import Layout from '../components/Layout';
+import Listado from '../components/Listado'
 
 const Tienda = ({guitarras}) => {
     return (
         <div>
             <Layout
-                pagina="Tienda -"
+                pagina="Tienda Virtual"
             >
-                <div className='contenedor'>
-                    <div className={styles.tienda}>
-                        {guitarras.map(guitarra => (
-                            <Guitarra
-                                key={guitarra.id}
-                                guitarra={guitarra}
-                            />
-                        ))}
-                    </div>
-                </div>
+                <main className='contenedor'>
+                    <h1 className='heading'>Nuestra colección</h1>
+
+                    <Listado 
+                        guitarras={guitarras}
+                    />
+                </main>
             </Layout>
         </div>
     )
 };
 
 export async function getServerSideProps() {
-    const url = `${process.env.API_URL}/guitarras?_sort=created_at:asc`
+    const url = `${process.env.API_URL}/guitarras`
     const respuesta = await fetch(url);
     const guitarras = await respuesta.json();
 
