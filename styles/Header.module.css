@@ -3,6 +3,7 @@
     background-size: cover;
     background-position: 50%;
     padding: 5rem 0;
+    position: relative;
 }
 
 .barra {
@@ -23,6 +24,8 @@
     margin-top: 5rem;
     display: flex;
     gap: 2rem;
+    position: relative;
+    z-index: 1;
 }
 
 @media (min-width: 768px) {
@@ -94,4 +97,17 @@
 .enlace:hover {
     background-color: var(--primary);
     color: var(--negro);
+}
+
+.guitarra {
+    display: none;
+}
+
+@media (min-width: 992px) {
+    .guitarra {
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: -7px;
+    }
 }
